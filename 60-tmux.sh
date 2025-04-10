@@ -29,12 +29,17 @@ function _tmux() {
     local tmux_command=$(which tmux)
     #local tmux_args='-T clipboard,256,mouse,ccolour,cstyle'
     local tmux_args='-T clipboard,256,ccolour,cstyle'
-    if [ -z "$*" ]; then
+
+    if [[ "$*" == "" ]]; then
         _tmux_default_session
-        echo $tmux_command $tmux_args attach-session -t "default"
-        $tmux_command $tmux_args attach-session -t "default"
+        tmux_args=$tmux_args attach-session -t "default"
     else
-        echo $tmux_command $tmux_args $*
-        $tmux_command $tmux_args $*
+        if [[ "$1" == "--vanilla" ]]; then
+            tmux_args=$tmux_args ${*: 2:$#}
+        elif [[ "$1" == "--raw" ]]; then
+            tmux_args=${*: 2:$#}
+        fi
     fi
+    echo $tmux_command $tmux_args
+    $tmux_command $tmux_args
 }
