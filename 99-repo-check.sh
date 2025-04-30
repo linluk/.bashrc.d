@@ -19,7 +19,7 @@ function _check_repos() {
                     continue;
                 else
                     echo "checking: $repo"
-                    git status --short
+                    git status --branch --short
                     #echo "git status returned: $?"  always 0
                 fi
             else
