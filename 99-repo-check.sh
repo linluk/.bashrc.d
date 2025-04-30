@@ -13,11 +13,15 @@ function _check_repos() {
             # echo "[DEBUG] in 'for repo in \$repos; do', \$repo is \"$repo\""
             if [ -d "$repo" ]; then
                 #echo -e "\n\n------------------------------------------\nchecking: $repo\n\n"
-                echo "checking: $repo"
                 cd "$repo"
-                git status
-                #echo "git status returned: $?"  always 0
-                #(IFS=$'\n'; for line in $(cd "$repo" && git status); do echo $line; done)
+                if [ $? -ne 0 ]; then
+                    echo "failed to enter: $repo"
+                    continue;
+                else
+                    echo "checking: $repo"
+                    git status --short
+                    #echo "git status returned: $?"  always 0
+                fi
             else
                 echo "\"$repo\" not found or no directory (tipp: check ~/.repos)"
             fi
