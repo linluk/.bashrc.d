@@ -33,6 +33,4 @@ alias yt2ogg='yt-dlp -x --audio-format vorbis --audio-quality 0 -o "%(title)s"'
 
 alias print-lz='lpr -U "lu.singer" -P "LZ-Kopierer" -o CNTrustPrint=True'
 
-alias tmux="_tmux"
-
 alias man='_man_with_colors'
