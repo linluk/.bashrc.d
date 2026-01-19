@@ -1,3 +1,47 @@
+# IMPORTANT NOTE!
+
+repository moved to [Codeberg.org](https://codeberg.org/linluk/.bashrc.d)
+
+## Why?
+
+I want to test [Codeberg.org](https://codeberg.org), a european (germany) hosted Github-like infrastructure.
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
+------
+
 # Here lives my Bash-Config
 
 My `~/.bashrc`'s only task is to source the `*.sh` files in this directory.
